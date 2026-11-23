@@ -1,3 +1,5 @@
+**English** | [简体中文](README.zh-CN.md)
+
 # Three bodies
 
 **An interactive atlas of the gravitational three-body problem, computed from scratch.**
@@ -121,7 +123,7 @@ cd ../.. && .venv/bin/python -I exp9_read_catalogue.py external/li-liao-3d/initi
 
 | Path | What it is |
 |---|---|
-| `app/` | The atlas (three.js + Vite). `src/physics.js` is the integrator in JavaScript. |
+| `app/` | The atlas (three.js + Vite). `src/physics.js` is the integrator in JavaScript; `src/i18n.js` holds the English and Chinese text. |
 | `research/core/tb.c` | Taylor-series integrator in C. |
 | `research/periodic.py` | Periodic-orbit search using reversing symmetries. |
 | `research/family.py` | Continuation of relative periodic orbits. |
