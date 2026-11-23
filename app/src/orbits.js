@@ -1,3 +1,5 @@
+import { t, getLang, orbitName, orbitTag } from './i18n.js';
+
 const SVG = 'http://www.w3.org/2000/svg';
 
 function glyph(thumb, colors) {
@@ -16,32 +18,27 @@ function glyph(thumb, colors) {
   return svg;
 }
 
-const GROUPS = [
-  ['flat', 'Planar orbits', 'Zero angular momentum. All three bodies move in one plane.'],
-  [
-    'family',
-    'One family',
-    'A continuous family of 3D orbits, each periodic in a rotating frame. Every entry is the same pattern rotating at a different rate; any fraction can be computed on request.',
-  ],
-  ['spatial', '3D orbits', 'Systems with angular momentum whose paths leave the plane.'],
-  ['orderly', 'Quasi-periodic orbits', 'They never repeat, yet stay regular. A formula fitted to a short span predicts them far ahead.'],
-];
+const GROUPS = ['flat', 'family', 'spatial', 'orderly'];
 
 let rows = new Map();
+let render = () => {};
 
 export function buildOrbitList(list, orbits, colors, onPick) {
   const onlyStable = document.getElementById('only-stable');
   const count = document.getElementById('orbit-count');
 
-  const render = () => {
+  render = () => {
+    const current = [...rows].find(([, row]) => row.getAttribute('aria-current') === 'true')?.[0];
     list.replaceChildren();
     rows = new Map();
     let shown = 0;
-    for (const [kind, title, note] of GROUPS) {
+    for (const kind of GROUPS) {
       const group = orbits.filter((o) => o.kind === kind && (!onlyStable.checked || o.stable));
       if (!group.length) continue;
       const head = document.createElement('li');
-      head.innerHTML = `<h2>${title}</h2><p class="group-note">${note}</p>`;
+      head.innerHTML = '<h2></h2><p class="group-note"></p>';
+      head.querySelector('h2').textContent = t(`group.${kind}`);
+      head.querySelector('p').textContent = t(`group.${kind}.note`);
       list.append(head);
       for (const o of group) {
         const li = document.createElement('li');
@@ -49,12 +46,13 @@ export function buildOrbitList(list, orbits, colors, onPick) {
         row.className = 'orbit';
         row.append(glyph(o.thumb, colors));
         const text = document.createElement('span');
-        text.innerHTML = `<span class="name"></span><br><span class="meta"></span>`;
-        text.querySelector('.name').textContent = o.name;
-        text.querySelector('.meta').textContent = [o.period ? (o.stable ? 'stable' : 'unstable') : '', o.tag].filter(Boolean).join(', ');
+        text.innerHTML = '<span class="name"></span><br><span class="meta"></span>';
+        text.querySelector('.name').textContent = orbitName(o.name);
+        const stability = o.period ? t(o.stable ? 'stable' : 'unstable') : '';
+        text.querySelector('.meta').textContent = [stability, orbitTag(o.tag)].filter(Boolean).join(getLang() === 'zh' ? '，' : ', ');
         const period = document.createElement('span');
         period.className = 'period';
-        period.textContent = o.period ? `period ${o.period.toFixed(2)}` : '';
+        period.textContent = o.period ? t('orbits.period', { period: o.period.toFixed(2) }) : '';
         row.append(text, period);
         row.addEventListener('click', () => onPick(o));
         li.append(row);
@@ -63,10 +61,15 @@ export function buildOrbitList(list, orbits, colors, onPick) {
         shown++;
       }
     }
-    count.textContent = orbits.length ? `${shown} of ${orbits.length}` : 'No orbits loaded';
+    count.textContent = orbits.length ? t('orbits.count', { shown, total: orbits.length }) : t('orbits.none');
+    markCurrentOrbit(current);
   };
 
   onlyStable.addEventListener('change', render);
+  render();
+}
+
+export function refreshOrbitList() {
   render();
 }
 

@@ -1,8 +1,10 @@
 import { Stage, BODY_COLORS } from './scene.js';
 import { ThreeBody, energy, minSeparation, signedArea, middleBody, escaper } from './physics.js';
-import { buildOrbitList, markCurrentOrbit } from './orbits.js';
+import { buildOrbitList, refreshOrbitList, markCurrentOrbit } from './orbits.js';
 import { MapPlate } from './map.js';
-import findingsHtml from './findings.html?raw';
+import { t, getLang, setLang, orbitName, applyStaticText } from './i18n.js';
+import findingsEn from './findings.html?raw';
+import findingsZh from './findings.zh.html?raw';
 
 const $ = (id) => document.getElementById(id);
 const stage = new Stage($('stage'));
@@ -23,6 +25,7 @@ const app = {
   areaSign: 0,
   gone: -1,
   showFormula: false,
+  fate: null,
   frame: 0,
 };
 
@@ -82,9 +85,8 @@ export function loadSystem(system) {
   stage.pushTrail(0, system.state);
   applyTrail();
 
-  $('system-name').textContent = system.name;
-  $('system-note').textContent = system.note || '';
-  $('r-fate').textContent = '';
+  app.fate = null;
+  renderSystemText();
   $('tape-beads').replaceChildren();
   $('formula-toggle').hidden = !system.formula;
   $('r-formula-row').hidden = !(system.formula && app.showFormula);
@@ -92,6 +94,14 @@ export function loadSystem(system) {
   markCurrentOrbit(system.id);
   mapPlate?.setCurrent(system.mapPoint || null);
   setPlaying(true);
+}
+
+// Everything written about the current system, in the current language.
+function renderSystemText() {
+  const { name, note } = app.system.describe();
+  $('system-name').textContent = name;
+  $('system-note').textContent = note;
+  $('r-fate').textContent = app.fate ? t('fate', app.fate) : '';
 }
 
 function applyTrail() {
@@ -130,8 +140,7 @@ function formulaPositions(formula, t) {
 
 function setPlaying(on) {
   app.playing = on;
-  $('play').textContent = on ? 'Pause' : 'Play';
-  $('play').setAttribute('aria-label', on ? 'Pause' : 'Play');
+  $('play').textContent = t(on ? 'pause' : 'play');
 }
 
 const SUPER = { '-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' };
@@ -165,7 +174,8 @@ function tick(nowMs) {
       if (app.gone < 0) {
         app.gone = escaper(sim.s, system.masses);
         if (app.gone >= 0) {
-          $('r-fate').textContent = `Body ${app.gone + 1} is ejected at time ${sim.t.toFixed(1)}. The other two remain bound as a binary.`;
+          app.fate = { body: app.gone + 1, time: sim.t.toFixed(1) };
+          renderSystemText();
         }
       } else if (Math.hypot(sim.s[3 * app.gone], sim.s[3 * app.gone + 1], sim.s[3 * app.gone + 2]) > 60 * stage.scale) {
         setPlaying(false);
@@ -215,7 +225,7 @@ window.addEventListener('keydown', (e) => {
 
 // drawer
 
-const tabs = [...document.querySelectorAll('.tabs button')];
+const tabs = [...document.querySelectorAll('.tabs button[data-tab]')];
 function openTab(name) {
   const current = tabs.find((t) => t.getAttribute('aria-pressed') === 'true')?.dataset.tab;
   const next = current === name ? null : name;
@@ -232,22 +242,21 @@ tabs.forEach((t) => t.addEventListener('click', () => openTab(t.dataset.tab)));
 let mapPlate = null;
 let orbits = [];
 
-function orbitSystem(o) {
-  let note;
+function orbitNote(o) {
   if (!o.period) {
     const f = o.formulaStats;
-    note = `Quasi-periodic: it never repeats. A ${o.formula.freqs.length}-term formula fitted to the first ${f.fitSpan} time units stays within ${sci(f.missAt10x)} of the true motion out to time ${f.testedTo}. Turn on "Show formula" to compare.`;
-  } else {
-    const stability = o.stable
-      ? 'Linearly stable: small disturbances stay small.'
-      : `Unstable: a small disturbance grows ${o.growth < 1000 ? o.growth.toFixed(1) : o.growth.toExponential(0)}-fold per period.`;
-    note = `Period ${o.period.toFixed(3)}. ${stability}`;
-    if (o.turn) note += ` Family member: the whole pattern rotates by ${o.turn} of a half-turn every half cycle.`;
+    return t('note.quasi', { terms: o.formula.freqs.length, fitSpan: f.fitSpan, testedTo: f.testedTo, error: sci(f.missAt10x) });
   }
+  const growth = o.growth < 1000 ? o.growth.toFixed(1) : o.growth.toExponential(0);
+  const parts = [t('note.period', { period: o.period.toFixed(3) }), o.stable ? t('note.stable') : t('note.unstable', { growth })];
+  if (o.turn) parts.push(t('note.family', { turn: o.turn }));
+  return parts.join(getLang() === 'zh' ? '' : ' ');
+}
+
+function orbitSystem(o) {
   return {
     id: o.id,
-    name: o.name,
-    note,
+    describe: () => ({ name: orbitName(o.name), note: orbitNote(o) }),
     state: o.state,
     masses: o.masses || EQUAL,
     period: o.period,
@@ -256,12 +265,25 @@ function orbitSystem(o) {
   };
 }
 
-function describeMapPoint(p1, p2, cell) {
-  if (!cell) return '';
-  if (cell.escaper >= 0) return `In the survey, body ${cell.escaper + 1} is ejected around time ${cell.tEnd.toFixed(0)}.`;
-  return cell.orderly
-    ? 'The survey classifies this system as regular: bound and predictable.'
-    : 'The survey classifies this system as chaotic: still bound when the survey ended.';
+function pickedSystem(p1, p2, cell) {
+  const note = () => {
+    if (!cell) return t('noData');
+    if (cell.escaper >= 0) return t('pick.ejected', { body: cell.escaper + 1, time: cell.tEnd.toFixed(0) });
+    return t(cell.orderly ? 'pick.regular' : 'pick.chaotic');
+  };
+  return {
+    describe: () => ({ name: t('pick.name', { p1: p1.toFixed(3), p2: p2.toFixed(3) }), note: note() }),
+    state: collinearStart(p1, p2),
+    mapPoint: [p1, p2],
+  };
+}
+
+function applyLanguage() {
+  applyStaticText();
+  $('findings').innerHTML = getLang() === 'zh' ? findingsZh : findingsEn;
+  $('play').textContent = t(app.playing ? 'pause' : 'play');
+  refreshOrbitList();
+  if (app.system) renderSystemText();
 }
 
 async function getJson(url) {
@@ -274,7 +296,11 @@ async function getJson(url) {
 }
 
 async function init() {
-  $('findings').innerHTML = findingsHtml;
+  applyLanguage();
+  $('lang').addEventListener('click', () => {
+    setLang(getLang() === 'zh' ? 'en' : 'zh');
+    applyLanguage();
+  });
   $('findings').addEventListener('click', (e) => {
     const name = e.target.closest('[data-orbit]')?.dataset.orbit;
     const o = name && orbits.find((x) => x.name === name);
@@ -288,21 +314,11 @@ async function init() {
   if (mapMeta) {
     mapPlate = new MapPlate($('map-canvas'), $('map-readout'), mapMeta, orbits.filter((o) => o.kind === 'flat'));
     await mapPlate.load();
-    mapPlate.onPick = (p1, p2, cell) =>
-      loadSystem({
-        name: `Initial velocity (${p1.toFixed(3)}, ${p2.toFixed(3)})`,
-        note: describeMapPoint(p1, p2, cell),
-        state: collinearStart(p1, p2),
-        mapPoint: [p1, p2],
-      });
+    mapPlate.onPick = (p1, p2, cell) => loadSystem(pickedSystem(p1, p2, cell));
   }
 
   const first = orbits.find((o) => o.featured) || orbits[0];
-  loadSystem(
-    first
-      ? orbitSystem(first)
-      : { name: 'Initial velocity (0.347, 0.533)', note: 'No research data loaded yet.', state: collinearStart(0.347, 0.533) },
-  );
+  loadSystem(first ? orbitSystem(first) : pickedSystem(0.347, 0.533, null));
   requestAnimationFrame(tick);
 }
 

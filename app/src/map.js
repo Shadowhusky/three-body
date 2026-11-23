@@ -1,3 +1,5 @@
+import { t } from './i18n.js';
+
 // The survey of starting conditions: an image to look at plus the measured
 // numbers behind every pixel (who left, when, how fast neighbours separated).
 
@@ -58,11 +60,9 @@ export class MapPlate {
     const { cell } = hit;
     const fate =
       cell.escaper >= 0
-        ? `body ${cell.escaper + 1} is ejected at time ${cell.tEnd.toFixed(1)}`
-        : cell.orderly
-          ? `bound and regular through time ${this.meta.tMax}`
-          : `still bound at time ${this.meta.tMax}, but chaotic`;
-    this.readout.textContent = `Velocity (${hit.p1.toFixed(3)}, ${hit.p2.toFixed(3)}): ${fate}.`;
+        ? t('map.ejected', { body: cell.escaper + 1, time: cell.tEnd.toFixed(1) })
+        : t(cell.orderly ? 'map.regular' : 'map.chaotic', { time: this.meta.tMax });
+    this.readout.textContent = t('map.hover', { p1: hit.p1.toFixed(3), p2: hit.p2.toFixed(3), fate });
     this.draw();
   }
 
