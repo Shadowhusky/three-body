@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Three bodies</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2310122e'/%3E%3Ccircle cx='4' cy='11' r='2' fill='%236ec1ff'/%3E%3Ccircle cx='8' cy='4' r='2' fill='%23ffc14d'/%3E%3Ccircle cx='12' cy='11' r='2' fill='%23ff5c6c'/%3E%3C/svg%3E"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Hanken+Grotesk:wght@300..600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="stage" aria-label="Three bodies in motion"></div>
+
+    <header class="masthead">
+      <h1>Three bodies</h1>
+      <p id="system-name"></p>
+      <p id="system-note"></p>
+    </header>
+
+    <nav class="tabs" aria-label="Sections">
+      <button data-tab="orbits" aria-pressed="false">Orbits</button>
+      <button data-tab="map" aria-pressed="false">Map</button>
+      <button data-tab="findings" aria-pressed="false">Findings</button>
+    </nav>
+
+    <aside class="drawer" id="drawer" hidden>
+      <section data-panel="orbits" hidden>
+        <p class="lede">
+          Periodic orbits found by our own search. Each one closes on itself to within rounding error.
+        </p>
+        <div class="filters">
+          <label><input type="checkbox" id="only-stable" /> Stable only</label>
+          <span id="orbit-count"></span>
+        </div>
+        <ol id="orbit-list"></ol>
+      </section>
+      <section data-panel="map" hidden>
+        <p class="lede">
+          Each point is one choice of initial velocities. Colour shows which body is eventually ejected; ivory
+          marks systems that stay bound and regular. Click anywhere to watch that system.
+        </p>
+        <div class="plate">
+          <canvas id="map-canvas" width="600" height="600"></canvas>
+          <span class="axis axis-x">outer bodies&rsquo; velocity along the line</span>
+          <span class="axis axis-y">outer bodies&rsquo; velocity across the line</span>
+        </div>
+        <p id="map-readout">Move over the map to inspect a system.</p>
+      </section>
+      <section data-panel="findings" hidden>
+        <article id="findings"></article>
+      </section>
+    </aside>
+
+    <section class="readout" aria-live="off">
+      <dl>
+        <div><dt>Time</dt><dd id="r-time">0.00</dd></div>
+        <div><dt>Energy error</dt><dd id="r-energy">0</dd></div>
+        <div><dt>Closest separation</dt><dd id="r-sep">0</dd></div>
+        <div id="r-formula-row" hidden><dt>Formula error</dt><dd id="r-formula">0</dd></div>
+      </dl>
+      <p id="r-fate"></p>
+      <div class="tape">
+        <span class="tape-label">Who passed between the other two</span>
+        <div id="tape-beads"></div>
+      </div>
+    </section>
+
+    <footer class="transport">
+      <button id="play" aria-label="Pause">Pause</button>
+      <button id="restart">Restart</button>
+      <label>Speed <input id="speed" type="range" min="-1" max="1.5" step="0.01" value="0" /><output id="speed-out">1×</output></label>
+      <label>Trail <input id="trail" type="range" min="0" max="1" step="0.01" value="0.5" /></label>
+      <label class="toggle"><input id="braid" type="checkbox" /> Braid through time</label>
+      <label class="toggle" id="formula-toggle" hidden><input id="formula" type="checkbox" /> Show formula</label>
+      <label class="toggle"><input id="spin" type="checkbox" checked /> Auto-rotate</label>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

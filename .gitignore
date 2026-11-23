@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.wrangler/
+.venv/
+__pycache__/
+*.dylib
+.DS_Store
+
+# regenerable caches and logs
+research/results/*.npz
+research/results/*.log
+
+# third-party catalogue data: fetch it yourself (see README)
+research/external/
+research/results/published_3d_equal_mass.json

@@ -1,0 +1,872 @@
+[
+ {
+  "label": "family turn 1/3",
+  "turn": "1/3",
+  "note": "in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.007179596673267952,
+  "contraction": 2.856708668453793e-10,
+  "residual_at_centre": 6.051379970764081e-42,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   1279,
+   1279
+  ],
+  "rho": "2^-122",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.1589594214267705153538703644515305295847",
+   "-0.4021369100747237493832253390929016257978",
+   "0.2104451281378731221497174690764795110576",
+   "0.1803569512862586641317199478891917026060",
+   "4.554414690856296693844016708497376057159"
+  ],
+  "newton_residual": 5.114232747292319e-90,
+  "half_lap": 4.5544146908592795,
+  "closes_after_time": "at most 6 half-laps",
+  "seconds": 1112
+ },
+ {
+  "label": "family turn 1/4",
+  "turn": "1/4",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.0050881682846011245,
+  "contraction": 2.9320464566542542e-08,
+  "residual_at_centre": 1.3521925018993632e-40,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   1417,
+   1417
+  ],
+  "rho": "2^-119",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.1361037053623913796565552634292619802823",
+   "-0.4065162536016813944991034779540017246623",
+   "0.1773042108057466821949240251695505215634",
+   "0.1602914725103377791041441031969076342392",
+   "4.298395540593963578958370663539971050878"
+  ],
+  "newton_residual": 3.3015595683858513e-97,
+  "half_lap": 4.298395540593268,
+  "closes_after_time": "at most 8 half-laps",
+  "seconds": 1246
+ },
+ {
+  "label": "family turn 1/5",
+  "turn": "1/5",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.005277652941913402,
+  "contraction": 3.597873141347197e-06,
+  "residual_at_centre": 1.4614969016513801e-39,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   1520,
+   1520
+  ],
+  "rho": "2^-116",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.1215873470871430567958769592494889734370",
+   "-0.4085687639444065831282916892237982440066",
+   "0.1569513941598738329914621433107033589523",
+   "0.1464822113369769863054900899828571752448",
+   "4.153892621310630049800307006070155467139"
+  ],
+  "newton_residual": 1.5640526454427013e-94,
+  "half_lap": 4.153892621311304,
+  "closes_after_time": "at most 10 half-laps",
+  "seconds": 1322
+ },
+ {
+  "label": "family turn 2/5",
+  "turn": "2/5",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.006969859264700062,
+  "contraction": 1.5255631115350955e-13,
+  "residual_at_centre": 6.972943339066878e-43,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   1187,
+   1187
+  ],
+  "rho": "2^-127",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.1769118248612086481303745793709723869978",
+   "-0.3974398276293256983148818960314075935327",
+   "0.2375384484875024393896277766866891340791",
+   "0.1948816859868187155111189004209881031208",
+   "4.778954258713929275661732587890750691125"
+  ],
+  "newton_residual": 1.3628462385773913e-97,
+  "half_lap": 4.778954258714158,
+  "closes_after_time": "at most 10 half-laps",
+  "seconds": 1040
+ },
+ {
+  "label": "family turn 3/7",
+  "turn": "3/7",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.007230393050804196,
+  "contraction": 7.88179108959636e-15,
+  "residual_at_centre": 2.901884408163264e-43,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   1151,
+   1151
+  ],
+  "rho": "2^-129",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.1847133840408804541464970879347109209729",
+   "-0.3949761816364124497700848614006502058382",
+   "0.2496371237573498873507200563977923027882",
+   "0.2009191286249438119841834780983107560483",
+   "4.882790798087557127202260030846982877586"
+  ],
+  "newton_residual": 5.567623669804784e-97,
+  "half_lap": 4.882790798089003,
+  "closes_after_time": "at most 14 half-laps",
+  "seconds": 1012
+ },
+ {
+  "label": "family turn 4/9",
+  "turn": "4/9",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.007559104859865329,
+  "contraction": 1.7963685092447922e-15,
+  "residual_at_centre": 1.833871397517556e-43,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   1131,
+   1131
+  ],
+  "rho": "2^-130",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.1891117679885882784301579507420296467914",
+   "-0.3934596022110637198598237530680403221822",
+   "0.2565513951103551497641345294228380587852",
+   "0.2042621474585185476046491854857094262045",
+   "4.942990518543872097407075076430075178071"
+  ],
+  "newton_residual": 1.8732748302999894e-103,
+  "half_lap": 4.94299051854393,
+  "closes_after_time": "at most 18 half-laps",
+  "seconds": 994
+ },
+ {
+  "label": "family turn 2/7",
+  "turn": "2/7",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.006358719242598454,
+  "contraction": 1.5870270728173307e-09,
+  "residual_at_centre": 3.2615013927159577e-41,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   1354,
+   1354
+  ],
+  "rho": "2^-121",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.1460342706892622117840503124549332027521",
+   "-0.4048053402096198704164836457447024222447",
+   "0.1915298419662660559566228091047588272567",
+   "0.1692487085930587717668390214471939223928",
+   "4.405435384817872079540757656739049272689"
+  ],
+  "newton_residual": 5.688100838226146e-95,
+  "half_lap": 4.405435384818593,
+  "closes_after_time": "at most 14 half-laps",
+  "seconds": 1185
+ },
+ {
+  "label": "family turn 1/6",
+  "turn": "1/6",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.007762987931982934,
+  "contraction": 0.0001352663123273137,
+  "residual_at_centre": 9.38517436414844e-39,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   1602,
+   1602
+  ],
+  "rho": "2^-114",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.1113045976467353072915364754417660938872",
+   "-0.4097483477202732064078117286166643540767",
+   "0.1428269232932517175067637047890898047739",
+   "0.1361623475530848080555052213451360511494",
+   "4.060386790452028028687538029261574392295"
+  ],
+  "newton_residual": 1.6666557919480307e-91,
+  "half_lap": 4.060386790449272,
+  "closes_after_time": "at most 12 half-laps",
+  "seconds": 1392
+ },
+ {
+  "label": "spatial orbit, period 6.2168, spin 1.319",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": false,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.006393414820422549,
+  "contraction": 1.2240436519551767e-70,
+  "residual_at_centre": 8.341638707340639e-82,
+  "u_x_nonzero": true,
+  "leaves_the_plane": false,
+  "steps": [
+   171,
+   171
+  ],
+  "rho": "2^-257",
+  "bits": 512,
+  "order": 60,
+  "centre": [
+   "-9.843353649242797552737987043884338553195e-92",
+   "2.954553152449877176328078977566008538135e-91",
+   "0.6331970836169973377117852310270056014547",
+   "0.5812893294616277102191253163213919183684",
+   "3.108418361785516852676420097703362889872"
+  ],
+  "newton_residual": 8.206416973781631e-84,
+  "half_lap": 3.108418361817653,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 386
+ },
+ {
+  "label": "spatial orbit, period 6.9539, spin 2.072",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.004085434397154586,
+  "contraction": 8.044765571323047e-30,
+  "residual_at_centre": 1.0584097110955393e-48,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   422,
+   422
+  ],
+  "rho": "2^-151",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "-0.005395828114859523387500946382946824546707",
+   "-0.02458552248933675428346624094601918456089",
+   "0.7677359025004936694365273385636878161749",
+   "0.1730755648129084187508675876442315855832",
+   "3.476944804013294415199307507265085696509"
+  ],
+  "newton_residual": 8.377506169475332e-110,
+  "half_lap": 3.476944804013303,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 364
+ },
+ {
+  "label": "spatial orbit, period 7.4208, spin 1.801",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.006908311305323878,
+  "contraction": 7.888996384200395e-43,
+  "residual_at_centre": 1.0492256837455582e-56,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   97,
+   97
+  ],
+  "rho": "2^-169",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.3406241673085360160744113636617924755429",
+   "0.2321574807742543093723002136213889451435",
+   "0.6101845320048525307425942658755746734422",
+   "0.3792053145044115514532988840246981185866",
+   "3.710418139085654939974991144226905488251"
+  ],
+  "newton_residual": 6.121702480024739e-85,
+  "half_lap": 3.710418139037494,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 83
+ },
+ {
+  "label": "spatial orbit, period 9.0911, spin 1.549",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.004434029593994637,
+  "contraction": 1.5932754088487532e-27,
+  "residual_at_centre": 5.527372048837034e-48,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   640,
+   640
+  ],
+  "rho": "2^-147",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.1970680823618451048955496262982851726225",
+   "0.2430769796014763137317763897178694426918",
+   "0.4387953622086631576183174826957000872399",
+   "0.2540167041973703167859807620993909352799",
+   "4.545544594878829886791919829066979729413"
+  ],
+  "newton_residual": 2.0740584369000624e-93,
+  "half_lap": 4.545544594878527,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 493
+ },
+ {
+  "label": "spatial orbit, period 9.5312, spin 1.525",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.0045231102201341855,
+  "contraction": 1.2925527245818613e-26,
+  "residual_at_centre": 3.840037181636562e-47,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   567,
+   567
+  ],
+  "rho": "2^-143",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.1348123992141109749390748996621969952183",
+   "0.3044365904528759914805284630146236988715",
+   "0.4669058370385325087024245466412773259115",
+   "0.2892252560877402371631045870457928933766",
+   "4.765611291084438553276282100155202686381"
+  ],
+  "newton_residual": 1.6263655158884865e-89,
+  "half_lap": 4.76561129108372,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 447
+ },
+ {
+  "label": "spatial orbit, period 10.7805, spin 0.860",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.006489229541386976,
+  "contraction": 1.3519704283855686e-37,
+  "residual_at_centre": 9.419115426783706e-54,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   395,
+   395
+  ],
+  "rho": "2^-164",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.06707061012360867071045456149442301671186",
+   "0.01673288089887486016420419415541715580040",
+   "0.3814909822014190195188763998391742626758",
+   "0.6289162304179067506116566214594693883025",
+   "5.390258732075640551429017978157069846332"
+  ],
+  "newton_residual": 1.2983651468149381e-98,
+  "half_lap": 5.390258732076149,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 323
+ },
+ {
+  "label": "spatial orbit, period 10.9808, spin 1.217",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.006298667940654923,
+  "contraction": 5.030307182332563e-30,
+  "residual_at_centre": 9.839362578506366e-47,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   284,
+   284
+  ],
+  "rho": "2^-141",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.09669069629433907111284031630831646705978",
+   "0.3256488470793904570253966134501000098465",
+   "0.4372918783384158594268758253693836713689",
+   "0.4782739024412380795727713348602946951995",
+   "5.490420681099247136446848545643629795741"
+  ],
+  "newton_residual": 2.7017379513467812e-108,
+  "half_lap": 5.490420681099244,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 236
+ },
+ {
+  "label": "spatial orbit, period 13.8161, spin 1.005",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.00553349607889686,
+  "contraction": 4.172459230033954e-29,
+  "residual_at_centre": 6.870394967272066e-49,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   631,
+   631
+  ],
+  "rho": "2^-150",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.2649047637215661967864530013503232137626",
+   "0.4803254929171734006763217676082363794720",
+   "0.03930767567354749374486573367846717201938",
+   "0.1849845699693349127654771696108228512973",
+   "6.908054000640586620198544540704534656433"
+  ],
+  "newton_residual": 1.651045372556509e-111,
+  "half_lap": 6.908054000640593,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 424
+ },
+ {
+  "label": "spatial orbit, period 18.4257, spin 1.748",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.0068861384943375015,
+  "contraction": 2.5718740148147183e-16,
+  "residual_at_centre": 8.451813437664692e-38,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   409,
+   409
+  ],
+  "rho": "2^-111",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "-0.008494095998278561948251353948715889984591",
+   "-0.2413305702058678878711488015228843850783",
+   "0.8224412079315995295390015031539829885246",
+   "0.4227626440035574106793062430890552059874",
+   "9.212853094596670803964128466147985658395"
+  ],
+  "newton_residual": 6.07168987613246e-97,
+  "half_lap": 9.212853094596724,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 339
+ },
+ {
+  "label": "spatial orbit, period 15.6574, spin 0.884",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.0053852575808832626,
+  "contraction": 4.660283127999239e-29,
+  "residual_at_centre": 6.41981738479435e-49,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   491,
+   491
+  ],
+  "rho": "2^-147",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.1325567337205266204499991890651015836417",
+   "0.5824375337948287162683829150555331268717",
+   "0.1951724478055799597403719739023313558700",
+   "0.3274965089137216942733044950919861956106",
+   "7.828696127516224509385905320924926245618"
+  ],
+  "newton_residual": 5.885418171685804e-101,
+  "half_lap": 7.828696127516894,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 410
+ },
+ {
+  "label": "spatial orbit, period 18.6258, spin 2.030",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.0065132941103911435,
+  "contraction": 3.0760217458543765e-15,
+  "residual_at_centre": 3.172609154581583e-39,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   486,
+   486
+  ],
+  "rho": "2^-117",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.08373378597594677909569855825373059646611",
+   "0.2339730072519980229775463931346472181125",
+   "0.8750421883868384223014209030191193970643",
+   "0.3358248050903979994814187238791453434185",
+   "9.312911492029413209944391293070461968448"
+  ],
+  "newton_residual": 3.4217135429822875e-105,
+  "half_lap": 9.31291149202938,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 424
+ },
+ {
+  "label": "spatial orbit, period 4.1904, spin 1.085",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.005217653670570144,
+  "contraction": 9.72188622018496e-36,
+  "residual_at_centre": 2.657620142246951e-53,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   534,
+   534
+  ],
+  "rho": "2^-166",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "-0.008824307184568260859482085910265815151123",
+   "0.001104604108504978023727589724738170269734",
+   "0.3601304640761986021949808529189145940588",
+   "0.1825731954735689685460266296228211327446",
+   "2.095195571915894496855354615184360523096"
+  ],
+  "newton_residual": 7.563866126879389e-111,
+  "half_lap": 2.0951955719159048,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 448
+ },
+ {
+  "label": "spatial orbit, period 7.1853, spin 1.827",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.004795672917765614,
+  "contraction": 1.7213566511956287e-23,
+  "residual_at_centre": 8.54050491737146e-46,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   545,
+   545
+  ],
+  "rho": "2^-141",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.04893760921350730377902068209792052971641",
+   "0.02394161479396412350438596453999270888159",
+   "0.6542137968991534182111320223147432473347",
+   "0.2027570632198737953628045262486209954576",
+   "3.592631394174296287229138951671152320697"
+  ],
+  "newton_residual": 2.162327397121122e-108,
+  "half_lap": 3.5926313941742767,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 457
+ },
+ {
+  "label": "spatial orbit, period 9.7117, spin 2.080",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.003998400287400727,
+  "contraction": 7.619678108513973e-19,
+  "residual_at_centre": 1.4290949337418001e-44,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   853,
+   853
+  ],
+  "rho": "2^-136",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.08120441927987098395098407382957659725453",
+   "0.1489587673485586483239186687754976333914",
+   "0.7391338198799029870586983584030233628523",
+   "0.1043103474265733537377484765337531660962",
+   "4.855830389334896750078770572617659000000"
+  ],
+  "newton_residual": 8.710296887861358e-85,
+  "half_lap": 4.8558303893384815,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 725
+ },
+ {
+  "label": "spatial orbit, period 5.6756, spin 0.471",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.004907277158395118,
+  "contraction": 4.511298330308224e-24,
+  "residual_at_centre": 3.728480180816701e-47,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   1005,
+   1005
+  ],
+  "rho": "2^-146",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.1640647282681268076722492684210494664802",
+   "-0.06446273841588632034246608326551121253658",
+   "0.1837271665797258331467642072526826656772",
+   "0.08743708359734533768178298421382191520471",
+   "2.837819796069065776887860411214204824254"
+  ],
+  "newton_residual": 2.351469635432651e-95,
+  "half_lap": 2.837819796069267,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 850
+ },
+ {
+  "label": "spatial orbit, period 14.3061, spin 1.338",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.0067837572792086576,
+  "contraction": 1.1493917092751923e-18,
+  "residual_at_centre": 3.458546023739971e-40,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   635,
+   635
+  ],
+  "rho": "2^-121",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.1691541500432037074514917642418620364420",
+   "-0.09948938232479355214989650198888350669015",
+   "0.5845351242442968372013452335562000996644",
+   "0.4372884281509118357776162978387742464726",
+   "7.153057390670340717016840315395250978695"
+  ],
+  "newton_residual": 2.679251908134061e-105,
+  "half_lap": 7.1530573906703525,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 538
+ },
+ {
+  "label": "spatial orbit, period 5.3669, spin 1.096",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.006266326141570744,
+  "contraction": 4.7971943811947706e-32,
+  "residual_at_centre": 5.989964283693251e-52,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   712,
+   712
+  ],
+  "rho": "2^-161",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.2105732338572376647639702261135591846941",
+   "0.05606330302069228434316025053493437645524",
+   "0.3345316389135615516448335507595597858771",
+   "0.2199457602279984982232368813149625482517",
+   "2.683468014199734771880373030626138093736"
+  ],
+  "newton_residual": 3.5588805315753724e-102,
+  "half_lap": 2.683468014199862,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 627
+ },
+ {
+  "label": "spatial orbit, period 19.4192, spin 2.058",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.00720113375496112,
+  "contraction": 3.868921821529713e-15,
+  "residual_at_centre": 1.9275580038155992e-41,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   788,
+   788
+  ],
+  "rho": "2^-126",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.1993769788004824204390516314283321360151",
+   "-0.03289771115923530640060414140705596002424",
+   "0.9446065268854839406735962244382829204045",
+   "0.1830386030860108546041378429956980963858",
+   "9.709592510382712596720683104481502739274"
+  ],
+  "newton_residual": 1.1941457105954866e-106,
+  "half_lap": 9.709592510382738,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 658
+ },
+ {
+  "label": "spatial orbit, period 20.0106, spin 1.022",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.003972409322329895,
+  "contraction": 3.988282734221785e-17,
+  "residual_at_centre": 7.844808023280135e-44,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   904,
+   904
+  ],
+  "rho": "2^-132",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.3575808623910680542637167739361747084161",
+   "-0.4187013076582744390745315823919521195589",
+   "0.01884506571536520516300945111149339970294",
+   "0.1212011991149022333752617039565381065418",
+   "10.00531392594043390452891585372879000216"
+  ],
+  "newton_residual": 3.063967587443484e-105,
+  "half_lap": 10.005313925940532,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 764
+ },
+ {
+  "label": "spatial orbit, period 14.3000, spin 0.453",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.005676720663359447,
+  "contraction": 3.951537176114525e-13,
+  "residual_at_centre": 1.8478272559173715e-41,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   1176,
+   1176
+  ],
+  "rho": "2^-125",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.2394314425525450834920266107262014537662",
+   "-0.3675163285742145115782118245242262797729",
+   "0.3414784168667518719719856233838446112801",
+   "0.2409516998322356823766922071414396186298",
+   "7.149997582925967206463175167146429986383"
+  ],
+  "newton_residual": 2.838162898891505e-105,
+  "half_lap": 7.149997582925916,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 986
+ },
+ {
+  "label": "spatial orbit, period 6.6816, spin 0.740",
+  "turn": "0/1",
+  "note": "not in the published catalogue",
+  "proved": true,
+  "krawczyk_inside": true,
+  "image_radius_over_rho": 0.004934989672676693,
+  "contraction": 1.8800857541353377e-18,
+  "residual_at_centre": 7.787947699956201e-45,
+  "u_x_nonzero": true,
+  "leaves_the_plane": true,
+  "steps": [
+   1127,
+   1127
+  ],
+  "rho": "2^-136",
+  "bits": 384,
+  "order": 45,
+  "centre": [
+   "0.02822972956418586985749060436331618439440",
+   "0.2343707472485553623968333376150897948686",
+   "0.2278142009315308290527640055742679614382",
+   "0.1227573479995739735436671038989346641281",
+   "3.340808319767863463595739310285185656624"
+  ],
+  "newton_residual": 6.856635219243959e-99,
+  "half_lap": 3.3408083197676937,
+  "closes_after_time": "at most 2 half-laps",
+  "seconds": 939
+ }
+]

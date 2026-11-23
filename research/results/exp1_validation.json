@@ -1,0 +1,21 @@
+{
+ "kepler_e0.9_error_after_0.6_6_62_revs": [
+  3.06049368853643e-14,
+  3.365713565922055e-13,
+  1.4473370713471713e-12
+ ],
+ "chaotic_run": {
+  "energy": -2.0917,
+  "max_rel_energy_drift": 7.673996150865125e-10,
+  "max_angular_momentum": 1.1084466677857563e-12,
+  "max_total_momentum": 4.773959005888173e-14
+ },
+ "time_reversal_error": {
+  "orderly": 3.344067102973809e-13,
+  "chaotic": 8.77508454892358e-08
+ },
+ "self_consistency_T50": {
+  "coarse_vs_fine": 5.054946187943893e-12,
+  "default_vs_fine": 2.3911761521886617e-13
+ }
+}

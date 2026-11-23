@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "three-body",
+  "compatibility_date": "2026-11-23",
+  "workers_dev": false,
+  "routes": [{ "pattern": "three-body.shadowhusky-london.uk", "custom_domain": true }],
+  "assets": { "directory": "./dist" }
+}
