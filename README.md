@@ -4,62 +4,80 @@
 
 [![Three equal masses on a stable 3D periodic orbit](docs/hero.gif)](https://three-body.shadowhusky-london.uk)
 
-**Live atlas: https://three-body.shadowhusky-london.uk**
+### ▶ Live atlas: https://three-body.shadowhusky-london.uk
 
-In Liu Cixin's novel, the Trisolarans live under three suns and can never tell whether tomorrow brings a gentle
+In Liu Cixin's novel, the Trisolarans live under three suns and never know whether tomorrow brings a gentle
 Stable Era or a Chaotic Era that fries the planet. This project takes on their homework: three equal masses,
-Newton's law of gravity, and nothing borrowed. Every number below comes from code in this repository.
+Newton's law of gravity, and nothing borrowed.
 
-## The short version
+## At a glance
 
 | | |
 |---:|---|
-| **345,146** | initial conditions surveyed. About 98 in 100 end in chaos or break-up. The Trisolarans were right to dehydrate. |
-| **324** | periodic orbits found: 171 planar and 153 three-dimensional. |
-| **128** | of the 3D orbits are absent from the largest published catalogue (Li & Liao 2025, 1,504 equal-mass entries). |
-| **28** | orbits whose existence is proved by computer, each unique within 10⁻³³ of the listed initial conditions. |
-| **1** | continuous family of rotating 3D orbits traced from end to end. It turns out to be a 1981 family, and four entries of the 2025 catalogue are members of it. |
+| **345,146** | initial conditions surveyed. About 98 in 100 end in chaos or break-up. |
+| **324** | periodic orbits found: 171 planar, 153 three-dimensional. |
+| **128** | 3D orbits absent from the largest published catalogue (2025, 1,504 entries). |
+| **28** | orbits proved to exist by computer, each unique within 10⁻³³ of our numbers. |
 
-## What you can do in the atlas
+## Orbits
 
-| Browse 324 periodic orbits | Click anywhere on the stability map | Watch orbits braid through time |
-|---|---|---|
-| ![Orbit gallery](docs/gallery.png) | ![Stability map](docs/map.png) | ![Braid view](docs/braid.png) |
-| Famous ones (figure-eight, butterflies, moths) and hundreds more, each tagged stable or unstable. | Every pixel is a different choice of initial velocities. Colour shows which body gets ejected; ivory marks the rare stable islands. | Stretch time into the third dimension and the three paths become a braid. |
+Every clip is recorded from the live atlas. The simulation runs in your browser.
 
-The simulation running in your browser is the same Taylor-series integrator used for the research, ported to
-JavaScript and checked against the C version to 10⁻¹².
+<table>
+  <tr>
+    <td width="33%"><img src="docs/orbit-figure-eight.gif" alt="Figure-eight orbit"></td>
+    <td width="33%"><img src="docs/orbit-moth.gif" alt="Moth I orbit"></td>
+    <td width="33%"><img src="docs/orbit-dragonfly.gif" alt="Dragonfly orbit"></td>
+  </tr>
+  <tr>
+    <td><b>Figure-eight.</b> Three bodies chase each other along one curve. Stable.</td>
+    <td><b>Moth I.</b> A planar orbit of period 14.9. Stable.</td>
+    <td><b>Dragonfly.</b> Planar, with close passes. Unstable.</td>
+  </tr>
+  <tr>
+    <td><img src="docs/orbit-yin-yang.gif" alt="Yin-yang I orbit"></td>
+    <td><img src="docs/orbit-turn-1-4.gif" alt="3D family member at rotation 1/4"></td>
+    <td><img src="docs/orbit-spin.gif" alt="Fast-rotating 3D orbit"></td>
+  </tr>
+  <tr>
+    <td><b>Yin-yang I.</b> Planar, period 17.3. Unstable.</td>
+    <td><b>3D family, rotation 1/4.</b> Computed to order. Stable, existence proved.</td>
+    <td><b>A fast-rotating 3D orbit.</b> Not in the 2025 catalogue. Existence proved.</td>
+  </tr>
+</table>
 
-## What we found
+## Order and chaos
 
-**Chaos is the rule.** Within 200 time units, 43% of bound systems eject a body and 55% are still together but
-chaotic. Only 1 to 2% are regular, in a small island around the figure-eight orbit.
+<table>
+  <tr>
+    <td width="33%"><img src="docs/orbit-chaos.gif" alt="A chaotic system ejecting one body"></td>
+    <td width="33%"><img src="app/public/data/map.png" alt="Stability map"></td>
+    <td width="33%"><img src="docs/orbit-braid.gif" alt="Figure-eight drawn as a braid through time"></td>
+  </tr>
+  <tr>
+    <td><b>A Chaotic Era.</b> Most systems end like this: one body is ejected and never returns.</td>
+    <td><b>The stability map.</b> Each pixel is one system. Colour shows which body gets ejected; ivory marks the rare stable islands. Click any pixel in the atlas to watch it.</td>
+    <td><b>Braids.</b> Stretch time into the third dimension and the three paths weave a braid.</td>
+  </tr>
+</table>
 
-**But there are 324 worlds where the calendar works.** A symmetry-based search with Newton refinement found 171
-planar and 153 three-dimensional periodic orbits, each closing to rounding error. Twelve of the planar ones are
-the well-known named orbits; the sixty shortest orbits of the published 3D catalogue also close in our integrator.
+## Findings
 
-**One family, any rhythm you order.** Nine stable 3D orbits found separately turned out to be the same solution
-rotating at different rates. Following it as a relative periodic orbit (periodic in a rotating frame) gives a
-continuous family: every rational rotation rate yields an orbit that closes exactly, and the irrational ones never
-repeat yet are known for all time from a single cycle. The family was first computed by Michalodimitrakis in
-1981. We found it independently, and add where it starts (at the collinear Schubart orbit), how far it stays
-stable, and the members that close in the inertial frame.
-
-**Proved, not just simulated.** For 28 orbits, validated numerics (interval arithmetic plus a Krawczyk test) prove
-that an exact solution exists and is unique within 10⁻³³ of our numbers. In the novel this kind of calculation
-took an emperor and thirty million soldiers waving flags. We used one Mac. No sophons interfered.
-
-**A formula for the calm, a code for the chaos.** Regular orbits can be written as a quasi-periodic Fourier series
-that extrapolates ten times beyond the fitted span. Chaotic ones cannot, but their syzygy sequence (who passes
-between the other two) works like a postal address for the initial condition.
-
-**One prediction that failed.** A Kepler's-third-law argument says the survival fraction of unstable triples should
-decay as t^(−2/3). We measured −0.48 out to t = 2000. It steepens with time, but it is not confirmed.
+1. **Chaos is the rule.** Within 200 time units, 43% of systems eject a body and 55% are still bound but chaotic.
+   Only 1 to 2% are regular. The Trisolarans were right to dehydrate.
+2. **324 worlds where the calendar works.** A symmetry-based search with Newton refinement found 171 planar and
+   153 three-dimensional periodic orbits, each closing to rounding error.
+3. **One family, any rhythm you order.** Nine stable 3D orbits turned out to be one solution rotating at
+   different rates. Any rational rate gives an orbit that closes exactly. The family was first computed by
+   Michalodimitrakis in 1981; we found it independently and add where it starts, how far it stays stable, and
+   its exactly closing members.
+4. **Proved, not just simulated.** Interval arithmetic and a Krawczyk test prove that 28 of the orbits exist. In
+   the novel this took an emperor and thirty million soldiers waving flags. We used one Mac. No sophons interfered.
+5. **A formula for the calm, a code for the chaos.** Regular orbits fit a quasi-periodic series that predicts ten
+   times beyond the fitted span. Chaotic ones do not, but the sequence of who passes between the other two
+   works like a postal address for the initial condition.
 
 ## Run it
-
-The atlas:
 
 ```sh
 cd app
@@ -67,7 +85,8 @@ npm install
 npm run dev
 ```
 
-The research (macOS, needs `clang` and [uv](https://docs.astral.sh/uv/)):
+<details>
+<summary>Reproduce the research (macOS, needs <code>clang</code> and <a href="https://docs.astral.sh/uv/">uv</a>)</summary>
 
 ```sh
 cd research
@@ -85,8 +104,7 @@ uv pip install --python .venv/bin/python numpy scipy pillow python-flint
 .venv/bin/python export_app.py                               # export everything to the app
 ```
 
-Each script's docstring states the question it answers. Search stages are cached in `research/results/`, so
-reruns resume.
+Each script's docstring states the question it answers. Search stages are cached in `research/results/`.
 
 To repeat the catalogue comparison, fetch the published data first:
 
@@ -97,30 +115,30 @@ cd ../.. && .venv/bin/python -I exp9_read_catalogue.py external/li-liao-3d/initi
 .venv/bin/python exp9_catalogue.py
 ```
 
+</details>
+
 ## What is where
 
-```
-app/                 the atlas (three.js + Vite)
-  src/physics.js     Taylor-series integrator in JavaScript
-  public/data/       orbits, stability map, fitted formulas
-research/
-  core/tb.c          Taylor-series integrator in C
-  periodic.py        periodic-orbit search using reversing symmetries
-  family.py          continuation of relative periodic orbits
-  formula.py         frequency analysis of regular orbits
-  proof.py           validated integration and Krawczyk test (Arb ball arithmetic)
-  exp*.py            one script per experiment
-  results/           orbits, proofs and summary numbers as JSON
-```
+| Path | What it is |
+|---|---|
+| `app/` | The atlas (three.js + Vite). `src/physics.js` is the integrator in JavaScript. |
+| `research/core/tb.c` | Taylor-series integrator in C. |
+| `research/periodic.py` | Periodic-orbit search using reversing symmetries. |
+| `research/family.py` | Continuation of relative periodic orbits. |
+| `research/proof.py` | Validated integration and Krawczyk test (Arb ball arithmetic). |
+| `research/exp*.py` | One script per experiment. |
+| `research/results/` | Orbits, proofs and summary numbers as JSON. |
 
 ## Caveats
 
 - Equal masses only, and two families of symmetric initial conditions.
-- "Absent from the catalogue" means absent from that one list. The 1981 family shows the older literature holds
-  more than the modern catalogues record.
+- "Absent from the catalogue" means absent from that one list, not necessarily unknown.
+- One prediction failed: we expected the survival fraction of unstable triples to decay as t^(−2/3) and measured
+  −0.48.
 - The proof code is our own and has not been independently reviewed.
 
-## References
+<details>
+<summary>References</summary>
 
 - M. Šuvakov and V. Dmitrašinović, "Three classes of Newtonian three-body planar periodic orbits", *Phys. Rev. Lett.* 110, 114301 (2013).
 - X. Li and S. Liao, "More than six hundred new families of Newtonian periodic planar collisionless three-body orbits", *Sci. China Phys. Mech. Astron.* 60, 129511 (2017).
@@ -129,3 +147,5 @@ research/
 - M. Hénon, "A family of periodic solutions of the planar three-body problem, and their stability", *Celest. Mech.* 13, 267 (1976).
 - A. Chenciner and R. Montgomery, "A remarkable periodic solution of the three-body problem in the case of equal masses", *Ann. Math.* 152, 881 (2000).
 - Liu Cixin, *The Three-Body Problem* (2008), for the homework assignment.
+
+</details>
