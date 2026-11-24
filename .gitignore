@@ -13,3 +13,4 @@ research/results/*.log
 # third-party catalogue data: fetch it yourself (see README)
 research/external/
 research/results/published_3d_equal_mass.json
+research/results/exp12_signatures.json

@@ -2,7 +2,7 @@
 
 # Three bodies
 
-**An interactive atlas of the gravitational three-body problem, computed from scratch.**
+**Periodic orbits of the equal-mass three-body problem: a numerical study from scratch, with computer-assisted proofs and an interactive atlas.**
 
 [![Three equal masses on a stable 3D periodic orbit](docs/hero.gif)](https://three-body.shadowhusky-london.uk)
 
@@ -19,7 +19,9 @@ Newton's law of gravity, and nothing borrowed.
 | **345,146** | initial conditions surveyed. About 98 in 100 end in chaos or break-up. |
 | **324** | periodic orbits found: 171 planar, 153 three-dimensional. |
 | **128** | 3D orbits absent from the largest published catalogue (2025, 1,504 entries). |
-| **28** | orbits proved to exist by computer, each unique within 10⁻³³ of our numbers. |
+| **28** | 3D orbits proved to exist by computer, each unique within 10⁻³³ of our numbers. |
+| **20** | families that tie several 3D orbits together, 19 catalogue entries among them. |
+| **13** | 3D families traced back to the planar orbit they grow from. |
 
 ## Orbits
 
@@ -65,19 +67,27 @@ Every clip is recorded from the live atlas. The simulation runs in your browser.
 
 ## Findings
 
-1. **Chaos is the rule.** Within 200 time units, 43% of systems eject a body and 55% are still bound but chaotic.
-   Only 1 to 2% are regular. The Trisolarans were right to dehydrate.
-2. **324 worlds where the calendar works.** A symmetry-based search with Newton refinement found 171 planar and
-   153 three-dimensional periodic orbits, each closing to rounding error.
-3. **One family, any rhythm you order.** Nine stable 3D orbits turned out to be one solution rotating at
-   different rates. Any rational rate gives an orbit that closes exactly. The family was first computed by
-   Michalodimitrakis in 1981; we found it independently and add where it starts, how far it stays stable, and
-   its exactly closing members.
-4. **Proved, not just simulated.** Interval arithmetic and a Krawczyk test prove that 28 of the orbits exist. In
-   the novel this took an emperor and thirty million soldiers waving flags. We used one Mac. No sophons interfered.
-5. **A formula for the calm, a code for the chaos.** Regular orbits fit a quasi-periodic series that predicts ten
-   times beyond the fitted span. Chaotic ones do not, but the sequence of who passes between the other two
-   works like a postal address for the initial condition.
+1. **Chaos is the rule.** Within 200 time units, 43% of bound systems eject a body and 55% are still bound but
+   chaotic. Only 1 to 2% are regular. The Trisolarans were right to dehydrate.
+2. **324 periodic orbits.** A search based on time-reversal symmetry, refined with Newton's method, found 171
+   planar and 153 three-dimensional periodic orbits. 128 of the 3D ones are not in the 2025 catalogue of Li and
+   Liao. Orbits that are in it agree to 11 digits, with the same stability label in all 27 shared cases.
+3. **3D orbits come in families.** Seen from a rotating frame, each 3D periodic orbit belongs to a continuous
+   family, and the closed orbits are its members with a rational rotation per cycle. Of 144 short-cycle orbits
+   (103 ours, 41 from the catalogue), 60 belong to 20 families with several members. The largest, with 15 members,
+   is the family first computed by Michalodimitrakis in 1981. Members can be computed to order at any rational
+   rotation.
+4. **The 3D families grow out of planar orbits.** Of 14 families followed down to zero angular momentum, 13 end
+   exactly on a planar periodic orbit: the Schubart orbit, the figure-eight, Butterfly I, Yin-yang I, Moth III and
+   eight unnamed ones, with periods agreeing to better than one part in a million. One family joins two different
+   planar orbits. For the figure-eight and the Schubart orbit this link is known; for the others we found no
+   earlier statement in the papers we read.
+5. **28 orbits proved to exist.** Interval arithmetic and a Krawczyk test prove existence and local uniqueness for
+   nine members of the 1981 family and nineteen orbits absent from the catalogue. The method contains Lagrange's
+   exact solution, as it must. In the novel this took an emperor and thirty million soldiers waving flags. We used
+   one Mac. No sophons interfered.
+6. **A formula for the calm, a code for the chaos.** Regular orbits fit a quasi-periodic series; chaotic ones do
+   not, but the sequence of who passes between the other two pins down the initial condition like a postal address.
 
 ## Run it
 
@@ -103,6 +113,8 @@ uv pip install --python .venv/bin/python numpy scipy pillow python-flint
 .venv/bin/python exp4_formulas.py                            # quasi-periodic fits
 .venv/bin/python exp7_lifetimes.py 6000 2000                 # lifetime distribution
 .venv/bin/python exp10_prove.py family                       # existence proofs
+.venv/bin/python exp11_verify.py                              # independent checks
+.venv/bin/python exp12_families.py && .venv/bin/python exp13_origins.py   # families and their planar parents (after the catalogue step below)
 .venv/bin/python export_app.py                               # export everything to the app
 ```
 
@@ -137,6 +149,8 @@ cd ../.. && .venv/bin/python -I exp9_read_catalogue.py external/li-liao-3d/initi
 - "Absent from the catalogue" means absent from that one list, not necessarily unknown.
 - One prediction failed: we expected the survival fraction of unstable triples to decay as t^(−2/3) and measured
   −0.48.
+- The family analysis covers orbits with short cycles. Many families were not followed to both ends, so some of
+  the 100 found may be the same family.
 - The proof code is our own and has not been independently reviewed.
 
 <details>

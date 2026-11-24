@@ -1,111 +1,146 @@
 <h2>Findings</h2>
 <p class="lede">
-  In Liu Cixin's novel, the Trisolarans live under three suns and can never tell whether tomorrow brings a
-  gentle Stable Era or a Chaotic Era that fries the planet. We took on their homework: three equal bodies, Newton's
-  law of gravity, and nothing borrowed. Here is what came back.
+  In Liu Cixin's novel, the Trisolarans live under three suns and never know whether tomorrow brings a gentle
+  Stable Era or a Chaotic Era that fries the planet. We took on their homework: three equal masses, Newton's law of
+  gravity, and nothing borrowed.
 </p>
 
-<h3>The Trisolarans were right to dehydrate</h3>
-<p>We started three bodies 345,146 different ways and watched each one. The Map tab shows them all.</p>
+<h3>Chaos is the rule</h3>
+<p>We followed 345,146 bound systems, each started with different velocities, for 200 time units.</p>
 <table>
-  <tr><th>What happened</th><th>Share</th></tr>
-  <tr><td>One body gets thrown out for good</td><td>43%</td></tr>
-  <tr><td>Still together, but wildly unpredictable</td><td>55%</td></tr>
-  <tr><td>Calm and predictable: a true Stable Era</td><td>1 to 2%</td></tr>
+  <tr><th>Outcome</th><th>Share</th></tr>
+  <tr><td>One body is ejected</td><td>43%</td></tr>
+  <tr><td>Still bound, but chaotic</td><td>55%</td></tr>
+  <tr><td>Regular and predictable</td><td>1 to 2%</td></tr>
 </table>
 <p>
-  So about 98 worlds in 100 are bad news. The calm ones cluster in the ivory island on the map, around the famous
-  <button class="link" data-orbit="Figure-eight">figure-eight</button>.
+  The regular ones sit in a small island around the
+  <button class="link" data-orbit="Figure-eight">figure-eight orbit</button>. The Trisolarans were right to
+  dehydrate.
 </p>
 
-<h3>324 worlds where the calendar works</h3>
+<h3>324 periodic orbits</h3>
 <p>
-  Hidden in the chaos are exact repeating dances, where the three bodies return to their starting places forever.
-  A civilisation there could print calendars. Our search found 324 of them.
+  Periodic orbits are the exceptions: motions that repeat exactly, forever. A search based on time-reversal
+  symmetry, refined with Newton's method, found 324 of them: 171 planar and 153 three-dimensional. Of the 3D ones,
+  28 are stable.
 </p>
 <ul>
-  <li>171 are flat, with all three bodies in one plane. Twelve are famous ones, with names like Butterfly and Moth.</li>
   <li>
-    153 weave through all three dimensions, like <button class="link" data-orbit="Turn 4/9">this one</button>.
-    28 of those are stable: nudge them and they recover.
+    <strong>128 of the 3D orbits are not in the largest published catalogue</strong> (Li and Liao, 2025, with
+    1,504 equal-mass entries). The comparison is unambiguous: orbits that are in the catalogue agree with it to 11
+    digits, and the rest differ from every entry by at least 3 parts in 10,000.
   </li>
-  <li>128 of the three-dimensional ones do not appear in the largest published catalogue, a 2025 list of 1,504.</li>
+  <li>For the 27 orbits both lists share, our stable or unstable label agrees with the published one every time.</li>
+  <li>Twelve of the planar orbits are the well-known named ones: the figure-eight, butterflies, moths and others.</li>
 </ul>
 
-<h3>Proved, not just simulated</h3>
+<h3>3D orbits come in families</h3>
 <p>
-  A simulation that looks right is not a proof. So for 28 of the orbits we made the computer prove they exist,
-  using arithmetic in which every number carries a guaranteed error bound. Each true orbit sits within
-  0.000000000000000000000000000000001 of the numbers we list.
+  A 3D periodic orbit is never alone. Viewed from a slowly rotating frame it belongs to a continuous family, and
+  the orbits that close exactly are the members whose rotation per cycle is a rational fraction of a turn.
+  Catalogues list those members one at a time. The family is the object underneath.
 </p>
-<p>
-  In the novel, a calculation like this took an emperor and thirty million soldiers waving flags. We used one Mac
-  with a locked screen. No sophons interfered.
-</p>
+<ul>
+  <li>
+    We followed the families through 144 orbits with short cycles (103 of ours, 41 from the catalogue).
+    <strong>60 of them belong to 20 families with several members</strong>, and 19 catalogue entries turn out to
+    share a family with another orbit.
+  </li>
+  <li>
+    The largest family has 15 members, four of them catalogue entries. It was first computed by Michalodimitrakis
+    in 1981; three rows of his table land on our curve to four digits.
+  </li>
+  <li>
+    Any rational rotation gives a new closed orbit, so members can be computed to order: try
+    <button class="link" data-orbit="Turn 1/4">a quarter</button> or
+    <button class="link" data-orbit="Turn 2/7">two sevenths</button>. An irrational rotation gives an orbit that
+    never closes, yet one cycle fixes it for all time. That is a Stable Era with no expiry date.
+  </li>
+</ul>
 
-<h3>One string, any rhythm you order</h3>
+<h3>The 3D families grow out of planar orbits</h3>
 <p>
-  Nine of our stable orbits turned out to be the same dance performed at different turning speeds: one continuous
-  family. Pick any fraction of a turn and we can build the matching orbit to order. Try
-  <button class="link" data-orbit="Turn 1/4">a quarter</button> or
-  <button class="link" data-orbit="Turn 2/7">two sevenths</button>.
+  Fourteen families could be followed all the way down to zero angular momentum.
+  <strong>Thirteen of them end exactly on a planar periodic orbit we already had.</strong> The periods agree to
+  better than one part in a million, and for most of them the initial conditions coincide as well.
 </p>
+<table>
+  <tr><th>Planar parent</th><th>3D family that grows from it</th></tr>
+  <tr><td>Schubart's collinear orbit</td><td>the 1981 family, 15 members</td></tr>
+  <tr><td>Figure-eight</td><td>a fast-rotating family, including <button class="link" data-orbit="3D orbit 1">this proved orbit</button></td></tr>
+  <tr><td>Butterfly I</td><td>two families, one containing catalogue orbit O1</td></tr>
+  <tr><td>Yin-yang I</td><td>one family</td></tr>
+  <tr><td>Moth III</td><td>one family, containing catalogue orbit O391</td></tr>
+  <tr><td>Eight unnamed planar orbits</td><td>seven more families, two containing catalogue orbits</td></tr>
+</table>
 <p>
-  Pick a speed that is not a fraction and the dance never repeats, yet one lap tells you where everything will be a
-  thousand laps later. That is a Stable Era with no expiry date.
+  One of these families leaves a planar orbit, travels through the third dimension and lands on a different
+  planar orbit.
 </p>
 <p class="verdict">
-  Credit where due: this family was first charted in 1981 by M. Michalodimitrakis. We found it on our own, and
-  three rows of his table land on our curve to four digits.
+  So the planar orbits are the skeleton of the 3D ones. For the figure-eight and the Schubart orbit this is known.
+  For the butterfly, yin-yang and moth orbits we found no earlier statement in the papers we read.
+</p>
+
+<h3>28 orbits proved to exist</h3>
+<p>
+  A simulation that closes to twelve digits is evidence, not proof. For 28 of the 3D orbits, validated numerics
+  prove that an exact solution exists and is unique within 10<sup>&minus;33</sup> of the initial conditions we
+  list. Interval arithmetic bounds every rounding and truncation error, and a Krawczyk test does the rest.
+</p>
+<ul>
+  <li>Proved: nine members of the 1981 family and nineteen orbits absent from the 2025 catalogue.</li>
+  <li>
+    The method was checked on Lagrange's rotating triangle, whose exact solution it must contain, and it does. One
+    proof repeated at higher precision certified the same solution to 40 digits.
+  </li>
+</ul>
+<p>
+  In the novel, a calculation like this took an emperor and thirty million soldiers waving flags. We used one Mac.
+  No sophons interfered.
 </p>
 
 <h3>A formula for the calm, a code for the chaos</h3>
 <ul>
   <li>
-    In the calm islands, the motion can be written as a sum of circles turning at steady speeds. Ninety circles
-    track <button class="link" data-orbit="Quasi-periodic orbit 1">this orbit</button> to within 0.15%, for ten times longer
-    than they were fitted on. Turn on &ldquo;Show formula&rdquo; to watch.
+    Regular motion can be written as a sum of circles turning at steady rates. Ninety of them predict
+    <button class="link" data-orbit="Quasi-periodic orbit 1">this orbit</button> to within 0.15%, ten times beyond
+    the span they were fitted on. Across the regular island as a whole the fit is much rougher, around 7%.
   </li>
   <li>
-    In the chaos, formulas fail completely. What works is a code: write down who passes between the other two,
-    again and again. That string of symbols pins down the starting point like a postal address. It is the tape of
-    coloured dots at the bottom left.
+    Chaotic motion has no such formula. What works is a code: the sequence of which body passes between the other
+    two. Halving the distance between two initial conditions makes their codes agree for about 2.5 more symbols, so
+    the code pins down the start like a postal address.
   </li>
 </ul>
 
-<h3>One guess that flopped</h3>
+<h3>What did not work</h3>
 <p>
-  We predicted how fast doomed triples fall apart, using nothing but Kepler's third law. They turned out to hang on
-  longer than predicted. Even the Trisolarans got their forecasts wrong, and they had nearly two hundred
-  civilisations of practice.
+  A Kepler's-third-law argument predicts that the fraction of unstable triples still together at time t falls as
+  t<sup>&minus;2/3</sup>. We measured an exponent of &minus;0.48 out to t = 2000. It steepens with time, but the
+  prediction is not confirmed. Even the Trisolarans got their forecasts wrong.
 </p>
 
-<h3>What we contributed</h3>
+<h3>Contributions</h3>
 <ul>
+  <li>Initial conditions for 128 three-dimensional periodic orbits absent from the 2025 catalogue.</li>
+  <li>Computer-assisted existence proofs for 28 three-dimensional orbits.</li>
   <li>
-    <strong>An atlas anyone can fly through.</strong> A simulator built from scratch, a map of 345,146 starts, and
-    324 exact orbits to watch in 3D.
+    A family structure for the short-cycle 3D orbits: 20 families with several members, placing 19 catalogue
+    entries alongside ours.
   </li>
+  <li>The planar parents of 13 three-dimensional families, linking the planar and 3D catalogues.</li>
   <li>
-    <strong>128 three-dimensional orbits missing from the biggest catalogue.</strong> Each was checked against all
-    1,504 of its equal-mass entries.
+    The 1981 family in full: its start at the Schubart orbit, the range over which it is stable, and its exactly
+    closing members.
   </li>
-  <li>
-    <strong>Computer proofs that 28 orbits truly exist.</strong> They are tagged &ldquo;existence proved&rdquo; in
-    the Orbits list.
-  </li>
-  <li>
-    <strong>New detail on the 1981 family.</strong> Where it begins (at a classic orbit in which the three bodies
-    bounce along a line), how far it stays stable, and how to build members that close exactly. Four entries in the
-    2025 catalogue turn out to be members of it.
-  </li>
-  <li>
-    <strong>An independent check on the record.</strong> The sixty published orbits we re-ran all repeat in our
-    simulator too.
-  </li>
+  <li>An independent confirmation of published orbits and their stability.</li>
 </ul>
 
 <p class="verdict">
-  Fine print. Equal masses only. &ldquo;Missing from the catalogue&rdquo; means missing from that list, not
-  necessarily unknown to everyone. The proof program is our own and has not been reviewed by others.
+  Scope. Equal masses only, and symmetric initial conditions. &ldquo;Absent from the catalogue&rdquo; means absent
+  from that list. The family analysis covers orbits with short cycles; many families were not followed to both
+  ends, so some of the 100 families found may be the same one. The proof code is our own and has not been reviewed
+  by others.
 </p>

@@ -107,3 +107,116 @@ def closing_time(z, max_laps):
             return T, miss
         best = min(best, (miss, T))
     return best[1], best[0]
+
+
+def invariants(z):
+    """Scale-invariant angular momentum L|E|^(1/2) and relative period 2t|E|^(3/2), plus the energy."""
+    s0 = tb.isosceles_state(*z[:4])
+    E = tb.energy(s0)[0]
+    return np.linalg.norm(tb.angular_momentum(s0)[0]) * abs(E) ** 0.5, 2 * z[4] * abs(E) ** 1.5, E
+
+
+def symmetric_epoch(q, period, samples=3000):
+    """First time t > 0 at which the orbit through tb.isosceles_state(*q) is symmetric
+    about an axis rotated by some angle phi around the angular momentum vector.
+    Returns (t, phi, residual) with phi in (-pi/2, pi/2]; falls back to the half period.
+
+    For a state s, the rotated-back state is linear in (1, cos phi, sin phi), so the
+    best angle at each sampled time comes from a 3x3 quadratic form."""
+    from scipy.optimize import least_squares
+
+    s0 = tb.isosceles_state(*q)
+    n = spin_axis(s0)
+    path = tb.sample(s0, period / 2, samples + 1)[1:]
+    times = np.linspace(0, period / 2, samples + 1)[1:]
+    v = path.reshape(-1, 6, 3)
+    along = (v @ n)[..., None] * n
+    parts = [along, v - along, -np.cross(n, v)]  # coefficients of 1, cos phi, sin phi
+    P = np.eye(18) - np.array([tb.sym_apply(e, 1) for e in np.eye(18)]).T
+    comps = np.stack([p.reshape(-1, 18) @ P.T for p in parts], axis=1)  # (samples, 3, 18)
+    gram = comps @ comps.transpose(0, 2, 1)
+    phis = np.linspace(-np.pi / 2, np.pi / 2, 721)
+    u = np.stack([np.ones_like(phis), np.cos(phis), np.sin(phis)])  # (3, angles)
+    r2 = np.einsum("ia,sij,ja->sa", u, gram, u)
+    best = r2.min(axis=1)
+    dt = times[1] - times[0]
+    for k in range(1, len(best) - 1):
+        if best[k] < 0.05 and best[k] <= best[k - 1] and best[k] <= best[k + 1]:
+            guess = [times[k], phis[int(np.argmin(r2[k]))]]
+            try:
+                fit = least_squares(lambda x: residual(np.r_[q, x[0]], x[1]), guess, xtol=1e-15, ftol=1e-15, gtol=1e-15,
+                                    bounds=([times[k] - 2 * dt, -np.pi], [times[k] + 2 * dt, np.pi]))
+            except RuntimeError:
+                continue
+            miss = np.linalg.norm(fit.fun)
+            if miss < 1e-8:
+                phi = (fit.x[1] + np.pi / 2) % np.pi - np.pi / 2
+                return float(fit.x[0]), float(phi), float(miss)
+    return period / 2, 0.0, float(np.linalg.norm(residual(np.r_[q, period / 2], 0.0)))
+
+
+def _corrector(w_pred, tangent, iters=14):
+    """Gauss-Newton onto the family, constrained to the plane through w_pred normal to the tangent."""
+    def F(w):
+        return np.r_[residual(w[:5], w[5]), (w - w_pred) @ tangent]
+
+    w = w_pred.copy()
+    r = F(w)
+    for _ in range(iters):
+        if np.linalg.norm(r) < 3e-13:
+            break
+        J = np.empty((19, 6))
+        for k in range(6):
+            d = np.zeros(6)
+            d[k] = 1e-7
+            J[:, k] = (F(w + d) - r) / 1e-7
+        step = np.linalg.lstsq(J, -r, rcond=None)[0]
+        for _ in range(6):
+            trial = F(w + step)
+            if np.linalg.norm(trial) < np.linalg.norm(r):
+                w, r = w + step, trial
+                break
+            step = step / 2
+        else:
+            break
+    return w, float(np.linalg.norm(r[:18]))
+
+
+def trace_arclength(z_start, phi_start, max_points=250, ds_max=0.04, budget=1e9):
+    """Pseudo-arclength continuation of the family through a known member, in both
+    directions. Unlike `trace`, this follows the family around folds in phi.
+    Returns rows of (y, a, b, c, t, phi, residual)."""
+    import time
+
+    t0 = time.time()
+    w0 = np.r_[z_start, phi_start]
+    z1, miss = solve(z_start, phi_start + 1e-3, iters=20)
+    if miss > 1e-10:
+        return np.array([[*w0, 0.0]])
+    first_tangent = np.r_[z1, phi_start + 1e-3] - w0
+    first_tangent /= np.linalg.norm(first_tangent)
+    branches = []
+    for direction in (1, -1):
+        rows, w, tangent, ds = [], w0, direction * first_tangent, 2e-3
+        while len(rows) < max_points and time.time() - t0 < budget:
+            try:
+                w_new, miss = _corrector(w + ds * tangent, tangent)
+                ok = miss < 1e-10 and np.linalg.norm(w_new - w - ds * tangent) < 0.5 * ds
+                if ok:
+                    L, _, E = invariants(w_new)
+                    ok = E < -1e-3 and w_new[4] > 0.05
+            except (RuntimeError, np.linalg.LinAlgError):
+                ok = False
+            if not ok:
+                ds /= 2
+                if ds < 1e-6:
+                    break
+                continue
+            tangent = (w_new - w) / np.linalg.norm(w_new - w)
+            w = w_new
+            rows.append([*w, miss])
+            ds = min(ds * 1.4, ds_max)
+            if L < 2e-3 or w[3] * w0[3] <= 0 or (len(rows) > 20 and np.linalg.norm(w - w0) < ds):
+                break  # reached the collinear limit or a planar orbit, or the family closed on itself
+        branches.append(rows)
+    return np.array(branches[1][::-1] + [[*w0, 0.0]] + branches[0])

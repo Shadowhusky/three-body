@@ -1,0 +1,393 @@
+{
+ "schubart_period": 4.983070370343995,
+ "ends": [
+  {
+   "family": 0,
+   "members": 15,
+   "catalogue_members": [
+    "O4",
+    "O7",
+    "O3",
+    "O12"
+   ],
+   "params": [
+    0.012667768862942692,
+    -0.4142735724899531,
+    0.015752140714475588,
+    0.016923438962533583
+   ],
+   "spin": 0.001811308481814127,
+   "period": 4.9830685576919205,
+   "phi_over_pi": -0.24565358444845561,
+   "origin": {
+    "orbit": "Schubart",
+    "period_gap": 3.6376208645272357e-07,
+    "by": "period, collinear start"
+   }
+  },
+  {
+   "family": 1,
+   "members": 6,
+   "catalogue_members": [],
+   "params": [
+    0.10859817908310461,
+    -0.48766233350426813,
+    0.15887793046644738,
+    0.0006543916073923696
+   ],
+   "spin": 0.000549856716547509,
+   "period": 9.96624400328816,
+   "phi_over_pi": 0.4996921758626959,
+   "origin": {
+    "orbit": "Butterfly I",
+    "fraction_of_planar_period": "1/2",
+    "period_gap": 2.6677082431980637e-08,
+    "by": "period"
+   }
+  },
+  {
+   "family": 1,
+   "members": 6,
+   "catalogue_members": [],
+   "params": [
+    0.0015896474947341662,
+    -0.3068818682879377,
+    0.0014843319937748102,
+    0.12551424196948469
+   ],
+   "spin": 0.0017646402839646988,
+   "period": 9.966241530266377,
+   "phi_over_pi": 0.4990119763365068,
+   "origin": {
+    "orbit": "Butterfly I",
+    "fraction_of_planar_period": "1/2",
+    "period_gap": 2.7481687481234474e-07,
+    "by": "period and initial condition"
+   }
+  },
+  {
+   "family": 2,
+   "members": 2,
+   "catalogue_members": [],
+   "params": [
+    6.394516778464368e-05,
+    0.347116876917484,
+    0.0003412066853471656,
+    0.5327249143860356
+   ],
+   "spin": 0.0009539212545154027,
+   "period": 4.6188407914325,
+   "phi_over_pi": -0.4998891694845063,
+   "origin": {
+    "orbit": "Figure-eight",
+    "fraction_of_planar_period": "1/2",
+    "period_gap": 3.5955167287937684e-08,
+    "by": "period and initial condition"
+   }
+  },
+  {
+   "family": 2,
+   "members": 2,
+   "catalogue_members": [],
+   "params": [
+    1.565496567084173,
+    -0.1372640711103138,
+    0.6446593562272788,
+    7.447475082088126e-05
+   ],
+   "spin": 0.0004663380849564484,
+   "period": 4.618840665048408,
+   "phi_over_pi": -0.49994581891639994,
+   "origin": {
+    "orbit": "Figure-eight",
+    "fraction_of_planar_period": "1/2",
+    "period_gap": 8.592436540055814e-09,
+    "by": "period"
+   }
+  },
+  {
+   "family": 6,
+   "members": 2,
+   "catalogue_members": [
+    "O1"
+   ],
+   "params": [
+    -4.974430707882457e-05,
+    0.3068903141838034,
+    -0.0004923610531701907,
+    0.1255061601594828
+   ],
+   "spin": 0.0015865488012839267,
+   "period": 19.93248861400469,
+   "phi_over_pi": 3.0366841711008113e-05,
+   "origin": {
+    "orbit": "Butterfly I",
+    "fraction_of_planar_period": "1",
+    "period_gap": 3.797204328748194e-09,
+    "by": "period and initial condition"
+   }
+  },
+  {
+   "family": 7,
+   "members": 1,
+   "catalogue_members": [],
+   "params": [
+    5.315965795148322e-14,
+    -2.8647710663475523e-11,
+    0.000845404403778267,
+    0.5901042015737159
+   ],
+   "spin": 0.0020397422841565383,
+   "period": 9.192346664333375,
+   "phi_over_pi": 0.9986778024512494,
+   "origin": null
+  },
+  {
+   "family": 24,
+   "members": 1,
+   "catalogue_members": [],
+   "params": [
+    0.00011165729397281696,
+    -0.6415777666699337,
+    5.567076616971748e-05,
+    0.30957874575315564
+   ],
+   "spin": 0.00037578048077942895,
+   "period": 24.288269998669193,
+   "phi_over_pi": -0.002399694031961859,
+   "origin": null
+  },
+  {
+   "family": 24,
+   "members": 1,
+   "catalogue_members": [],
+   "params": [
+    3.2803274279168524e-06,
+    -0.08800677943697356,
+    0.00043239364155609074,
+    0.42127185299037184
+   ],
+   "spin": 0.0012035005314986785,
+   "period": 24.334390287632964,
+   "phi_over_pi": 0.0007037156208357246,
+   "origin": {
+    "orbit": "planar orbit with T* = 24.3344",
+    "fraction_of_planar_period": "1",
+    "period_gap": 5.46689549185686e-08,
+    "by": "period"
+   }
+  },
+  {
+   "family": 26,
+   "members": 2,
+   "catalogue_members": [],
+   "params": [
+    0.00032773065273193077,
+    -0.2826966449904339,
+    -0.0001529745480480116,
+    0.3272079809650102
+   ],
+   "spin": 0.0014976652572085906,
+   "period": 29.602067323356774,
+   "phi_over_pi": -0.0005314082674258228,
+   "origin": {
+    "orbit": "Yin-yang I",
+    "fraction_of_planar_period": "1",
+    "period_gap": 4.223155181115601e-08,
+    "by": "period"
+   }
+  },
+  {
+   "family": 31,
+   "members": 1,
+   "catalogue_members": [],
+   "params": [
+    0.00013600214317183748,
+    0.0667317806017331,
+    0.0002325320936025532,
+    0.2912855696627388
+   ],
+   "spin": 0.0008535515485042821,
+   "period": 44.585270381085124,
+   "phi_over_pi": -0.0001861154847119095,
+   "origin": {
+    "orbit": "planar orbit with T* = 44.5853",
+    "fraction_of_planar_period": "1",
+    "period_gap": 5.596928809303847e-09,
+    "by": "period and initial condition"
+   }
+  },
+  {
+   "family": 40,
+   "members": 1,
+   "catalogue_members": [],
+   "params": [
+    2.6703209979481785e-05,
+    0.6150407241303297,
+    -2.630076434198179e-05,
+    0.5226158510769588
+   ],
+   "spin": 7.055891436934354e-05,
+   "period": 15.048366234398207,
+   "phi_over_pi": -5.4308527398049057e-05,
+   "origin": {
+    "orbit": "planar orbit with T* = 15.0484",
+    "fraction_of_planar_period": "1",
+    "period_gap": 4.0000258660910504e-10,
+    "by": "period and initial condition"
+   }
+  },
+  {
+   "family": 43,
+   "members": 1,
+   "catalogue_members": [],
+   "params": [
+    0.0006106855041737958,
+    -0.2873034794588968,
+    0.00025197879945118725,
+    0.6016295271560662
+   ],
+   "spin": 0.0024535475965324328,
+   "period": 23.07145442448413,
+   "phi_over_pi": 0.49994422197104454,
+   "origin": {
+    "orbit": "planar orbit with T* = 46.1429",
+    "fraction_of_planar_period": "1/2",
+    "period_gap": 9.339823692222637e-09,
+    "by": "period and initial condition"
+   }
+  },
+  {
+   "family": 45,
+   "members": 1,
+   "catalogue_members": [],
+   "params": [
+    -2.991643296618004e-05,
+    -0.24450779135841602,
+    -0.00020426489824851274,
+    0.27522392075793123
+   ],
+   "spin": 0.0005324043641428988,
+   "period": 49.64324532894441,
+   "phi_over_pi": -0.0002736389827641088,
+   "origin": {
+    "orbit": "planar orbit with T* = 49.6432",
+    "fraction_of_planar_period": "1",
+    "period_gap": 4.590471447407651e-09,
+    "by": "period"
+   }
+  },
+  {
+   "family": 45,
+   "members": 1,
+   "catalogue_members": [],
+   "params": [
+    0.0007547760399456138,
+    -0.2445158111600385,
+    0.00046924337035873396,
+    0.27522337575717964
+   ],
+   "spin": 0.0018198184984996645,
+   "period": 49.64323995140153,
+   "phi_over_pi": -0.001961401642996944,
+   "origin": {
+    "orbit": "planar orbit with T* = 49.6432",
+    "fraction_of_planar_period": "1",
+    "period_gap": 1.1291422852277577e-07,
+    "by": "period"
+   }
+  },
+  {
+   "family": 62,
+   "members": 2,
+   "catalogue_members": [
+    "O14"
+   ],
+   "params": [
+    0.00012354601691066995,
+    0.4112931396952094,
+    0.00035883855585352905,
+    0.26075463712071634
+   ],
+   "spin": 0.0013917477669846265,
+   "period": 49.63006027901933,
+   "phi_over_pi": -0.0001247480288662759,
+   "origin": {
+    "orbit": "planar orbit with T* = 49.6301",
+    "fraction_of_planar_period": "1",
+    "period_gap": 5.4915061387106334e-09,
+    "by": "period and initial condition"
+   }
+  },
+  {
+   "family": 70,
+   "members": 1,
+   "catalogue_members": [
+    "O62"
+   ],
+   "params": [
+    0.0003646732210349706,
+    -0.3221953548840441,
+    0.00025222649239534784,
+    0.6479811700992578
+   ],
+   "spin": 0.0013800976347349719,
+   "period": 23.006264911257347,
+   "phi_over_pi": -0.5004593352275276,
+   "origin": {
+    "orbit": "planar orbit with T* = 46.0125",
+    "fraction_of_planar_period": "1/2",
+    "period_gap": 4.3280917294552523e-08,
+    "by": "period and initial condition"
+   }
+  },
+  {
+   "family": 70,
+   "members": 1,
+   "catalogue_members": [
+    "O62"
+   ],
+   "params": [
+    -0.0002998316180279429,
+    -0.5689883446668492,
+    -0.0010262839267910259,
+    0.4494302926045955
+   ],
+   "spin": 0.0012570820881281526,
+   "period": 23.03193157616784,
+   "phi_over_pi": -0.5000546474998198,
+   "origin": {
+    "orbit": "planar orbit with T* = 46.0639",
+    "fraction_of_planar_period": "1/2",
+    "period_gap": 4.684485799266724e-09,
+    "by": "period and initial condition"
+   }
+  },
+  {
+   "family": 89,
+   "members": 1,
+   "catalogue_members": [
+    "O391"
+   ],
+   "params": [
+    0.0003183414642760911,
+    -0.3834493908685403,
+    -0.00028868946030255813,
+    0.3773606679681699
+   ],
+   "spin": 0.0019096952464274224,
+   "period": 53.85689979875827,
+   "phi_over_pi": -0.001769283255150406,
+   "origin": {
+    "orbit": "Moth III",
+    "fraction_of_planar_period": "1",
+    "period_gap": 9.854432148070913e-08,
+    "by": "period and initial condition"
+   }
+  }
+ ],
+ "ends_total": 19,
+ "ends_identified": 17,
+ "families": 14,
+ "families_identified": 13
+}
