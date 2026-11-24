@@ -1,0 +1,26 @@
+{
+ "lagrange": {
+  "steps": 13,
+  "enclosure_contains_exact_solution": true,
+  "largest_enclosure_radius": 1.6156978017859217e-11,
+  "derivative_vs_finite_difference": 3.55887763703322e-10
+ },
+ "catalogue_matching": {
+  "orbits": 156,
+  "matched_largest_gap": 6.982525620544548e-12,
+  "matched": 28,
+  "unmatched_smallest_gap": 0.00026531412006345647,
+  "unmatched": 128,
+  "between_1e-7_and_1e-4": 0
+ },
+ "stability_labels": {
+  "compared": 27,
+  "agree": 27
+ },
+ "proof_repeated": {
+  "proved_again": true,
+  "rho_first": "2^-169",
+  "rho_again": "2^-237",
+  "centres_differ_by": 0.0
+ }
+}
